@@ -10,16 +10,19 @@
       form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+      #messages li .odd { background: #eee; }
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <ul id="messages">
+      <li></li>
+    </ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+    <span id="x" style="display:none"></span>
   </body>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-git2.min.js"></script>
+  <script type="text/javascript" src="res/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   <script src="res/client.js"></script>
 </html>

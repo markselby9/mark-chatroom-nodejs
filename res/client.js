@@ -5,5 +5,8 @@ $('form').submit(function(){
 	return false // no refresh
 })
 socket.on('broadcastmsg', function(msg){
-	alert(msg)
+	// alert(msg)
+	var safemsg = $("#x").text(msg).html(); 
+	$('#messages > li:last').append('<li>'+safemsg+'</li>')
+	$('#messages li:odd').addClass("odd")
 })
