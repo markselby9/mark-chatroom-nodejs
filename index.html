@@ -1,28 +1,53 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li .odd { background: #eee; }
-    </style>
-  </head>
-  <body>
-    <ul id="messages">
-      <li></li>
-    </ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-    <span id="x" style="display:none"></span>
-  </body>
-  <script type="text/javascript" src="res/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script src="res/client.js"></script>
+<head>
+  <title>Mark chat</title>
+  <link rel="stylesheet" href="res/client.css" type="text/css" />
+  <link rel="stylesheet" href="res/css/bootstrap.min.css" type="text/css" />
+</head>
+<body>
+  <!-- message body -->
+  <div class="container-fluid message-div panel panel-default">
+    <div class="panel-heading">Mark-chat
+    </div>
+    <div class="panel-body">
+      <ul id="messages" class="list-unstyled">
+        <li></li>
+      </ul>
+    </div>
+    <div class="row" id="buttom-div">
+      <div class="toolbar">
+        <button type="button" class="btn btn-primary" id="set-nickname" data-toggle="modal" data-target="#nickname-modal">Set nickname!</send-button>
+      </div>
+      <div class="type-area">
+        <div class="col-xs-15 col-sm-6 col-md-10"><input class="form-control input-lg input" type="text" /></div>
+        <div class="col-xs-3 col-md-2"><button type="button" class="btn btn-success" id="send-button">Send</button></div>
+      </div>
+    </div>
+  </div>
+  <!-- nickname modal -->
+  <div class="modal fade bs-example-modal-sm" id="nickname-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Set nickname!</h4>
+      </div>
+      <div class="modal-body">
+        <input id="input-nickname" type="text"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save-nickname">Save nickname</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- finish nickname modal -->
+  <span id="x" style="display:none"></span>
+</body>
+<script type="text/javascript" src="res/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="res/js/bootstrap.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="res/client.js"></script>
 </html>
