@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Mark chat</title>
@@ -7,39 +7,60 @@
 </head>
 <body>
   <!-- message body -->
-  <div class="container-fluid message-div panel panel-default">
-    <div class="panel-heading">Mark-chat
-    </div>
-    <div class="panel-body">
-      <ul id="messages" class="list-unstyled">
-        <li></li>
-      </ul>
-    </div>
-    <div class="row" id="buttom-div">
-      <div class="toolbar">
-        <button type="button" class="btn btn-primary" id="set-nickname" data-toggle="modal" data-target="#nickname-modal">Set nickname!</send-button>
+  <div class="container message-div" id="message-container-div">
+    <div class="col-sm-8 panel panel-default" id="message-div">
+      <div class="panel-heading">Mark-chat
       </div>
-      <div class="type-area">
-        <div class="col-xs-15 col-sm-6 col-md-10"><input class="form-control input-lg input" type="text" /></div>
-        <div class="col-xs-3 col-md-2"><button type="button" class="btn btn-success" id="send-button">Send</button></div>
+      <div class="panel-body" id="messages-panel-div">
+        <ul id="messages" class="list-unstyled">
+          <li></li>
+        </ul>
       </div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1" id="online-div">
+      <div class="panel-group" role="tablist">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+            <h4 class="panel-title">
+              <a class="" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="true" aria-controls="collapseListGroup1">
+                Online list: <p id="online-number">(0 online)</p>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+            <ul class="list-group" id="online-list">
+              <li class="list-group-item"></li>
+            </ul>
+            <div class="panel-footer">Click to check</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer row" id="buttom-div">
+    <div class="toolbar">
+     <button type="button" class="btn btn-primary" id="set-nickname" data-toggle="modal" data-target="#nickname-modal">Set nickname!</button>
+     </div>
+     <div class="type-area">
+      <div class="col-xs-15 col-sm-6 col-md-10"><input class="form-control input-lg input" id="input-box" type="text" /></div>
+      <div class="col-xs-3 col-md-2"><button type="button" class="btn btn-success" id="send-button">Send</button></div>
     </div>
   </div>
   <!-- nickname modal -->
   <div class="modal fade bs-example-modal-sm" id="nickname-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Set nickname!</h4>
-      </div>
-      <div class="modal-body">
-        <input id="input-nickname" type="text"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="save-nickname">Save nickname</button>
-      </div>
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Set nickname!</h4>
+        </div>
+        <div class="modal-body">
+          <input id="input-nickname" type="text"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="save-nickname">Save nickname</button>
+        </div>
       </div>
     </div>
   </div>
